@@ -3,5 +3,7 @@ numpy
 matplotlib
 seaborn
 torch
-torchvisiongit
+torchvision
 torchaudio
+scikit_learn
+timm
