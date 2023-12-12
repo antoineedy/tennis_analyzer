@@ -1,2 +1,2 @@
-# tennis_analyzer
-Tennis analyzer
+# Tennis Analyzer
+### Antoine EDY
