@@ -1,0 +1,3 @@
+9/12/2023
+---------
+Initial commit. Added the dataset, the model (TrackNetV2) and the training script.
