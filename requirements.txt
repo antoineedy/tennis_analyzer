@@ -8,3 +8,4 @@ torchaudio
 scikit_learn
 timm
 torchsummary
+opencv-python

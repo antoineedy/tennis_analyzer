@@ -24,12 +24,12 @@ class ConvBlock(nn.Module):
         return self.block(x)
 
 
-class BallTrackerNet(nn.Module):
-    def __init__(self, out_channels=256):
+class TrackNetV2(nn.Module):
+    def __init__(self, in_channels=9, out_channels=256):
         super().__init__()
         self.out_channels = out_channels
 
-        self.conv1 = ConvBlock(in_channels=9, out_channels=64)
+        self.conv1 = ConvBlock(in_channels=in_channels, out_channels=64)
         self.conv2 = ConvBlock(in_channels=64, out_channels=64)
         self.pool1 = nn.MaxPool2d(kernel_size=2, stride=2)
         self.conv3 = ConvBlock(in_channels=64, out_channels=128)
@@ -83,7 +83,7 @@ class BallTrackerNet(nn.Module):
         x = self.conv16(x)
         x = self.conv17(x)
         x = self.conv18(x)
-        # x = self.softmax(x)
+        x = self.softmax(x)
         out = x.reshape(batch_size, self.out_channels, -1)
         if testing:
             out = self.softmax(out)
@@ -103,7 +103,7 @@ class BallTrackerNet(nn.Module):
 
 if __name__ == "__main__":
     device = "cpu"
-    model = BallTrackerNet().to(device)
+    model = TrackNetV2().to(device)
     inp = torch.rand(1, 9, 360, 640)
     out = model(inp)
     print("out = {}".format(out.shape))

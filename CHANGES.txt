@@ -1,3 +1,15 @@
 9/12/2023
 ---------
 Initial commit. Added the dataset, the model (TrackNetV2) and the training script.
+
+12/12/2023
+---------
+Added another version of the model, and pre-computed weights.
+
+13/12/2023
+---------
+Crete my own model (that uses the difference between two frames)
+
+29/12/2023
+---------
+Re-using the TrackNetV2 model
